@@ -90,6 +90,6 @@ stdenv.mkDerivation rec {
     license = licenses.asl20;
     changelog = "https://github.com/jgraph/drawio-desktop/releases/tag/v${version}";
     maintainers = with maintainers; [ danieldk ];
-    platforms = [ "x86_64-linux" ];
+    platforms = [ "aarch64-linux" "x86_64-linux" ];
   };
 }

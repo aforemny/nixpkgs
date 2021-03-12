@@ -15,6 +15,8 @@ with haskellLib;
 
 self: super: {
 
+  hint = dontCheck super.hint;
+
   # Arion's test suite needs a Nixpkgs, which is cumbersome to do from Nixpkgs
   # itself. For instance, pkgs.path has dirty sources and puts a huge .git in the
   # store. Testing is done upstream.

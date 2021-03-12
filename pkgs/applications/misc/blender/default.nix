@@ -155,7 +155,7 @@ stdenv.mkDerivation rec {
     # say: "We've decided to cancel the BL offering for an indefinite period."
     # OptiX, enabled with cudaSupport, is non-free.
     license = with licenses; [ gpl2Plus ] ++ optional cudaSupport unfree;
-    platforms = [ "x86_64-linux" "x86_64-darwin" ];
+    platforms = [ "aarch64-linux" "x86_64-linux" "x86_64-darwin" ];
     maintainers = with maintainers; [ goibhniu veprbl ];
   };
 }

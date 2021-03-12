@@ -108,7 +108,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = "https://www.keybase.io/";
     description = "The Keybase official GUI";
-    platforms = [ "x86_64-linux" ];
+    platforms = [ "aarch64-linux" "x86_64-linux" ];
     maintainers = with maintainers; [ avaq rvolosatovs puffnfresh np Br1ght0ne ];
     license = licenses.bsd3;
   };
