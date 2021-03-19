@@ -1,0 +1,47 @@
+--- a/Makefile	2021-03-19 11:34:30.067105244 +0100
++++ b/Makefile	2021-03-19 11:34:47.679106304 +0100
+@@ -76,37 +76,37 @@ duckduckgo/cli: ${LIB} duckduckgo/duckdu
+ 	${CC} -o $@ duckduckgo/cli.o duckduckgo/duckduckgo.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ duckduckgo/gopher: ${LIB} duckduckgo/duckduckgo.o duckduckgo/gopher.o
+-	${CC} -o $@ duckduckgo/gopher.o duckduckgo/duckduckgo.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS_STATIC}
++	${CC} -o $@ duckduckgo/gopher.o duckduckgo/duckduckgo.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ reddit: reddit/cgi reddit/cli reddit/gopher
+
+ reddit/cgi: ${LIB} reddit/reddit.o reddit/cgi.o
+-	${CC} -o $@ reddit/cgi.o reddit/reddit.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS_STATIC}
++	${CC} -o $@ reddit/cgi.o reddit/reddit.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ reddit/cli: ${LIB} reddit/reddit.o reddit/cli.o
+ 	${CC} -o $@ reddit/cli.o reddit/reddit.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ reddit/gopher: ${LIB} reddit/reddit.o reddit/gopher.o
+-	${CC} -o $@ reddit/gopher.o reddit/reddit.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS_STATIC}
++	${CC} -o $@ reddit/gopher.o reddit/reddit.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ twitch: twitch/cgi twitch/twitch/gopher
+
+ twitch/cgi: ${LIB} twitch/twitch.o twitch/cgi.o
+-	${CC} -o $@ twitch/cgi.o twitch/twitch.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS_STATIC}
++	${CC} -o $@ twitch/cgi.o twitch/twitch.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ twitch/gopher: ${LIB} twitch/twitch.o twitch/gopher.o
+-	${CC} -o $@ twitch/gopher.o twitch/twitch.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS_STATIC}
++	${CC} -o $@ twitch/gopher.o twitch/twitch.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ youtube: youtube/cgi youtube/cli youtube/gopher
+
+ youtube/cgi: ${LIB} youtube/youtube.o youtube/cgi.o
+-	${CC} -o $@ youtube/cgi.o youtube/youtube.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS_STATIC}
++	${CC} -o $@ youtube/cgi.o youtube/youtube.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ youtube/cli: ${LIB} youtube/youtube.o youtube/cli.o
+ 	${CC} -o $@ youtube/cli.o youtube/youtube.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ youtube/gopher: ${LIB} youtube/youtube.o youtube/gopher.o
+-	${CC} -o $@ youtube/gopher.o youtube/youtube.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS_STATIC}
++	${CC} -o $@ youtube/gopher.o youtube/youtube.o ${LIB} ${LDFLAGS} ${LIBTLS_LDFLAGS}
+
+ .o:
+ 	${CC} ${FRONTENDS_LDFLAGS} -o $@ $< ${LIB}
