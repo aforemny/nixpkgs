@@ -4453,6 +4453,8 @@ in
 
   frescobaldi = python3Packages.callPackage ../misc/frescobaldi {};
 
+  frontends = recurseIntoAttrs (import ../misc/frontends { inherit callPackage; });
+
   frostwire = callPackage ../applications/networking/p2p/frostwire { };
   frostwire-bin = callPackage ../applications/networking/p2p/frostwire/frostwire-bin.nix { };
 

@@ -1,0 +1,30 @@
+--- a/Makefile  2021-03-19 11:27:41.349080651 +0100
++++ b/Makefile	2021-03-19 11:27:58.765081699 +0100
+@@ -6,18 +6,18 @@ VERSION = 0.4
+ RANLIB = ranlib
+
+ # OpenBSD
+-FRONTENDS_CFLAGS = -I../ -I. ${CFLAGS}
+-FRONTENDS_CPPFLAGS = ${CPPFLAGS}
+-FRONTENDS_LDFLAGS = ${LDFLAGS}
+-LIBTLS_LDFLAGS = -ltls
+-LIBTLS_LDFLAGS_STATIC = -ltls -lssl -lcrypto -static
+-
+-# Linux
+-#FRONTENDS_CFLAGS = -I../ -I. -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700 ${CFLAGS}
++#FRONTENDS_CFLAGS = -I../ -I. ${CFLAGS}
+ #FRONTENDS_CPPFLAGS = ${CPPFLAGS}
+ #FRONTENDS_LDFLAGS = ${LDFLAGS}
+ #LIBTLS_LDFLAGS = -ltls
+-#LIBTLS_LDFLAGS_STATIC = -pthread -ltls -lssl -lcrypto -static
++#LIBTLS_LDFLAGS_STATIC = -ltls -lssl -lcrypto -static
++
++# Linux
++FRONTENDS_CFLAGS = -I../ -I. -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700 ${CFLAGS}
++FRONTENDS_CPPFLAGS = ${CPPFLAGS}
++FRONTENDS_LDFLAGS = ${LDFLAGS}
++LIBTLS_LDFLAGS = -ltls
++LIBTLS_LDFLAGS_STATIC = -pthread -ltls -lssl -lcrypto -static
+
+ BIN = \
+ 	duckduckgo/cli \
