@@ -1017,6 +1017,9 @@
   ./services/web-apps/calibre-web.nix
   ./services/web-apps/code-server.nix
   ./services/web-apps/baget.nix
+  ./services/web-apps/codemadness-frontends/reddit.nix
+  ./services/web-apps/codemadness-frontends/twitch.nix
+  ./services/web-apps/codemadness-frontends/youtube.nix
   ./services/web-apps/convos.nix
   ./services/web-apps/cryptpad.nix
   ./services/web-apps/dex.nix
