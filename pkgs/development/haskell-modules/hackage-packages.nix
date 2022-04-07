@@ -143724,6 +143724,22 @@ self: {
        broken = true;
      }) {};
 
+  "hspec_2_7_10" = callPackage
+    ({ mkDerivation, base, hspec-core, hspec-discover
+     , hspec-expectations, QuickCheck
+     }:
+     mkDerivation {
+       pname = "hspec";
+       version = "2.7.10";
+       sha256 = "0z0lwrmrqkglr78n6k2c36n4h68142bh785ys0x4jaibjshvs6rw";
+       libraryHaskellDepends = [
+         base hspec-core hspec-discover hspec-expectations QuickCheck
+       ];
+       description = "A Testing Framework for Haskell";
+       license = lib.licenses.mit;
+       hydraPlatforms = lib.platforms.none;
+     }) {};
+
   "hspec" = callPackage
     ({ mkDerivation, base, hspec-core, hspec-discover
      , hspec-expectations, QuickCheck
@@ -143810,6 +143826,34 @@ self: {
        license = lib.licenses.mit;
      }) {};
 
+  "hspec-core_2_7_10" = callPackage
+    ({ mkDerivation, ansi-terminal, array, base, call-stack, clock
+     , deepseq, directory, filepath, hspec-expectations, hspec-meta
+     , HUnit, process, QuickCheck, quickcheck-io, random, setenv
+     , silently, stm, temporary, tf-random, transformers
+     }:
+     mkDerivation {
+       pname = "hspec-core";
+       version = "2.7.10";
+       sha256 = "12k9yp5gznrda449ir60d5wv3xl7nnyffkb5mhfc0svw9f8lxlv1";
+       libraryHaskellDepends = [
+         ansi-terminal array base call-stack clock deepseq directory
+         filepath hspec-expectations HUnit QuickCheck quickcheck-io random
+         setenv stm tf-random transformers
+       ];
+       testHaskellDepends = [
+         ansi-terminal array base call-stack clock deepseq directory
+         filepath hspec-expectations hspec-meta HUnit process QuickCheck
+         quickcheck-io random setenv silently stm temporary tf-random
+         transformers
+       ];
+       testToolDepends = [ hspec-meta ];
+       testTarget = "--test-option=--skip --test-option='Test.Hspec.Core.Runner.hspecResult runs specs in parallel'";
+       description = "A Testing Framework for Haskell";
+       license = lib.licenses.mit;
+       hydraPlatforms = lib.platforms.none;
+     }) {};
+
   "hspec-core" = callPackage
     ({ mkDerivation, ansi-terminal, array, base, base-orphans
      , call-stack, clock, deepseq, directory, filepath
@@ -143883,6 +143927,27 @@ self: {
        testHaskellDepends = [ base hspec ];
        description = "Helper functions to simplify adding integration tests";
        license = lib.licenses.bsd3;
+     }) {};
+
+  "hspec-discover_2_7_10" = callPackage
+    ({ mkDerivation, base, directory, filepath, hspec-meta, QuickCheck
+     }:
+     mkDerivation {
+       pname = "hspec-discover";
+       version = "2.7.10";
+       sha256 = "13yzvd3b679skvs1insk4s0wc4zvmz6hs38kc8q0j6vzqq06smqa";
+       isLibrary = true;
+       isExecutable = true;
+       libraryHaskellDepends = [ base directory filepath ];
+       executableHaskellDepends = [ base directory filepath ];
+       testHaskellDepends = [
+         base directory filepath hspec-meta QuickCheck
+       ];
+       testToolDepends = [ hspec-meta ];
+       description = "Automatically discover and run Hspec tests";
+       license = lib.licenses.mit;
+       hydraPlatforms = lib.platforms.none;
+       maintainers = with lib.maintainers; [ maralorn ];
      }) {};
 
   "hspec-discover" = callPackage
@@ -144063,6 +144128,24 @@ self: {
        license = lib.licenses.mit;
        hydraPlatforms = lib.platforms.none;
        broken = true;
+     }) {};
+
+  "hspec-golden_0_1_0_3" = callPackage
+    ({ mkDerivation, base, directory, hspec, hspec-core
+     , optparse-applicative, silently
+     }:
+     mkDerivation {
+       pname = "hspec-golden";
+       version = "0.1.0.3";
+       sha256 = "1d5ab34n0f1wk1q86qlb7x2b49abzzh08jh7j52nbrvnxld2j64l";
+       isLibrary = true;
+       isExecutable = true;
+       libraryHaskellDepends = [ base directory hspec-core ];
+       executableHaskellDepends = [ base directory optparse-applicative ];
+       testHaskellDepends = [ base directory hspec hspec-core silently ];
+       description = "Golden tests for hspec";
+       license = lib.licenses.mit;
+       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "hspec-golden" = callPackage
@@ -266997,6 +267080,25 @@ self: {
        ];
        description = "Tasty helpers to test HsLua";
        license = lib.licenses.mit;
+     }) {};
+
+  "tasty-hspec_1_1_6" = callPackage
+    ({ mkDerivation, base, hspec, hspec-core, QuickCheck, tasty
+     , tasty-quickcheck, tasty-smallcheck
+     }:
+     mkDerivation {
+       pname = "tasty-hspec";
+       version = "1.1.6";
+       sha256 = "02s82ijs2ringqxsqbm7m3vcy5brmwxa617azxv0v2phi3rdkjvl";
+       revision = "1";
+       editedCabalFile = "0za15rg0szacxq9yfxxjzddr77ai7ng5827a20pj9dr5anjlnajj";
+       libraryHaskellDepends = [
+         base hspec hspec-core QuickCheck tasty tasty-quickcheck
+         tasty-smallcheck
+       ];
+       description = "Hspec support for the Tasty test framework";
+       license = lib.licenses.bsd3;
+       hydraPlatforms = lib.platforms.none;
      }) {};
 
   "tasty-hspec" = callPackage
